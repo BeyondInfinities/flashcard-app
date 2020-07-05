@@ -18,9 +18,9 @@ export class FlashcardComponent implements OnInit {
   back: string;
   display: string;
   bcolor: number;
+  canvas: any;
 
   constructor(
-    private f: p5,
     private route: ActivatedRoute,
     private http: HttpClient
   ) { }
@@ -35,22 +35,23 @@ export class FlashcardComponent implements OnInit {
     // Can create a form soon to get it going
 
    /*
-    fetchData = (query: number) => {
-      placeholder service
-      this.flashcardService.getCard()
-    .subscribe((data: Card) => this.Card = {
+      this.flashcardService.getCard( query: number)
+      .subscribe((data: Card) => this.Card = {
         this.front: data['front'],
         this.back:  data['back']
     });
     }
-    */
-
-    
+    */    
 
     //Setting up the card using canvas
     const flashcard = (f) => {
       f.setup = () => {
         let canvas2 = f.createCanvas(f.windowWidth* 0.9, f.windowHeight * 0.9);
+        canvas2.parent('sketch-holder');
+        
+        f.background(255);
+        f.rect(0, 0, f.width, f.height);
+
         this.display = this.front;
       };
 
@@ -68,7 +69,7 @@ export class FlashcardComponent implements OnInit {
         }
       };
       
-  
+      this.canvas = new p5(flashcard);
     }
   }
 
