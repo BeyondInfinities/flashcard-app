@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "flahcard-app": {
+    "flashcard-app": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/flahcard-app",
+            "outputPath": "dist/flashcard-app",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -66,18 +66,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "flahcard-app:build"
+            "browserTarget": "flashcard-app:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "flahcard-app:build:production"
+              "browserTarget": "flashcard-app:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "flahcard-app:build"
+            "browserTarget": "flashcard-app:build"
           }
         },
         "test": {
@@ -114,15 +114,15 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "flahcard-app:serve"
+            "devServerTarget": "flashcard-app:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "flahcard-app:serve:production"
+              "devServerTarget": "flashcard-app:serve:production"
             }
           }
         }
       }
     }},
-  "defaultProject": "flahcard-app"
+  "defaultProject": "flashcard-app"
 }
